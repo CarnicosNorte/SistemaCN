@@ -22,7 +22,7 @@ $Seguro = 0;# mysqli_fetch_array(mysqli_query($conn, "SELECT  * FROM users"));
 	<div class="navbar-fixed">
 		<nav class="red darken-2">
 		    <div class="nav-wrapper container">
-		      <a href="home.php" class="brand-logo center hide-on-small-only"><img  class="responsive-img" width="14%" src="img/Logo_CN.png"></a>
+		      <a href="home.php" class="brand-logo center hide-on-small-only"><img  class="responsive-img" style="width: 74px; height: 85px;" src="img/Logo_CN.png"></a>
 		      <a href="home.php" class="brand-logo center hide-on-med-and-up"><img  class="responsive-img" width="26%" src="img/Logo_CN.png"></a>
 		      <a href="#" data-target="menu-responsive" class="sidenav-trigger">
 				<i class="material-icons">menu</i>

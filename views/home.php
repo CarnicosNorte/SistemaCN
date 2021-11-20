@@ -19,6 +19,5 @@ include('Nav.php')
 			<h4 class="hide-on-med-and-up"><b class="-text">Carnicos del</b> <b class="amber-text">Norte</b></h4><div class="hide-on-med-and-up"><br><br><br><br><br><br></div>
 		</div>
 	</div>	<br><br><br>--->
-</div>
 </body>
 </html>
