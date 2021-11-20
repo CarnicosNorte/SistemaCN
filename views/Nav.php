@@ -1,8 +1,10 @@
 <?php
-#include('../php/conexion.php');
+include('../php/conexion.php');
 #include '../php/is_logged.php';
 $Hoy = date('Y-m-d');
-$Seguro = 0;#mysqli_fetch_array(mysqli_query($conn, "SELECT  count(*) FROM unidades WHERE vigencia_p <= '$MasSemana'"));
+
+$Seguro = 0;# mysqli_fetch_array(mysqli_query($conn, "SELECT  * FROM users"));
+
 ?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +17,13 @@ $Seguro = 0;#mysqli_fetch_array(mysqli_query($conn, "SELECT  count(*) FROM unida
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	  <link rel="shortcut icon" href="img/LOGO.jpg" type="image/jpg" />
       <style rel="stylesheet">
-		.dropdown-content{  overflow: visible;	}
+		.dropdown-content{ overflow: visible; }
 	  </style>
 	<div class="navbar-fixed">
 		<nav class="red darken-2">
 		    <div class="nav-wrapper container">
-		      <a href="home.php" class="brand-logo center"><img  class="responsive-img" style="width: 73px; height: 85px;" src="img/Logo_CN.png"></a>
+		      <a href="home.php" class="brand-logo center hide-on-small-only"><img  class="responsive-img" width="14%" src="img/Logo_CN.png"></a>
+		      <a href="home.php" class="brand-logo center hide-on-med-and-up"><img  class="responsive-img" width="26%" src="img/Logo_CN.png"></a>
 		      <a href="#" data-target="menu-responsive" class="sidenav-trigger">
 				<i class="material-icons">menu</i>
 			  </a>
