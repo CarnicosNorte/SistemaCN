@@ -1,10 +1,8 @@
 <?php
 include('../php/conexion.php');
-#include '../php/is_logged.php';
+include '../php/is_logged.php';
 $Hoy = date('Y-m-d');
-
 $Seguro = 0;# mysqli_fetch_array(mysqli_query($conn, "SELECT  * FROM users"));
-
 ?>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,16 +42,16 @@ $Seguro = 0;# mysqli_fetch_array(mysqli_query($conn, "SELECT  * FROM users"));
 					<li><a href="Pedidos.php" class="black-text"><i class="material-icons">assessment</i>Pedidos</a></li>
 					<li><a href="#" class="black-text"><i class="material-icons">lock</i>Mas<span class="new badge red" data-badge-caption=""><?php echo $Seguro;#['count(*)'];?></span></a></li>
 		 		</ul>
-		        <li><a class='dropdown-button' data-target='dropdown4'> <i class="material-icons right">arrow_drop_down</i><?php echo '$_SESSION[]';?></a></li>
+		        <li><a class='dropdown-button' data-target='dropdown4'> <i class="material-icons right">arrow_drop_down</i><?php echo $_SESSION['user_name'];?></a></li>
 				<ul id='dropdown4' class='dropdown-content'>
 					<li><a href="../php/cerrar_sesion.php" class="black-text"><i class="material-icons">exit_to_app</i>Cerrar Sesión</a></li>
 		 		</ul>
 			  </ul>	
 			  <ul class="right hide-on-large-only hide-on-small-only">
-					<li><a class='dropdown-button' data-target='dropdown10'> <i class="material-icons right">arrow_drop_down</i> <i class="material-icons right">face</i> .</a></li>
-					<ul id='dropdown10' class='dropdown-content'>
-						<li><a href="../php/cerrar_sesion.php" class="black-text"><i class="material-icons">exit_to_app</i>Cerrar Sesión</a></li>
-		 			</ul>
+				<li><a class='dropdown-button' data-target='dropdown10'> <i class="material-icons right">arrow_drop_down</i> <i class="material-icons right">face</i> .</a></li>
+				<ul id='dropdown10' class='dropdown-content'>
+					<li><a href="../php/cerrar_sesion.php" class="black-text"><i class="material-icons">exit_to_app</i>Cerrar Sesión</a></li>
+		 		</ul>
 			  </ul>
 			  <ul class="right hide-on-med-and-up">
 				<li><a class='dropdown-button' data-target='dropdown8'><i class="material-icons left">account_circle</i><b>></b></a></li>
@@ -97,8 +95,8 @@ $Seguro = 0;# mysqli_fetch_array(mysqli_query($conn, "SELECT  * FROM users"));
 	    			<div class="collapsible-header"><i class="material-icons right">arrow_drop_down</i><i class="material-icons left">local_shipping</i>Operativo</div>
 		      		<div class="collapsible-body blue-grey lighten-3">
 		      			<span><ul>		      					  
-								<li><a href="pedidos.php"><i class="material-icons">assessment</i>Pedidos</a></li>
-								<li><a href="#"><i class="material-icons">lock</i>Mas<span class="new badge red" data-badge-caption=""><?php echo $Seguro;#['count(*)'];?></span></a></li>
+							<li><a href="pedidos.php"><i class="material-icons">assessment</i>Pedidos</a></li>
+							<li><a href="#"><i class="material-icons">lock</i>Mas<span class="new badge red" data-badge-caption=""><?php echo $Seguro;#['count(*)'];?></span></a></li>
 					    </ul></span>
 		      		</div>    			
 	    		</li>	    			
