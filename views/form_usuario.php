@@ -89,7 +89,7 @@
 		      <div class="col s1"><br></div>
 		      <div class="input-field col s12 m6 l6">
 		        <input type="password" class="validate" required id="repite_contra">
-		        <label for="repite_contra">Repite Contraseña</label>
+		        <label for="repite_contra">Repetir Contraseña</label>
 		      </div>
 		      <div class="input-field col s12 m6 l6">
 		          <select id="rol" class="browser-default">
