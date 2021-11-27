@@ -1,5 +1,8 @@
 <?php
+#LLAMAMOS LA SESSION CREADA POR EL USUARIO Y SU INFORMACION
 session_start();
+#DESTRUIMOS LA SESSION EN CURSO (LA QUE SE LLAMO) DEL USUARIO
 session_destroy();
+#SE DIRECCIONA A LA RAIZ
 header("location: ../");
 ?>

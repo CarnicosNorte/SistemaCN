@@ -1,4 +1,5 @@
 <?php 
+#LLAMAMOS LA SESSION CON LA INFORMACION DEL USUARIO LOGEADO
 session_start();
 #INCLUIMOS EL ARCHIVO QUE CONTIENEN LA CONEXION A LA BASE DE DATOS
 include('../php/conexion.php');
@@ -22,11 +23,13 @@ $UserEmail = str_replace($caracteres_malos, $caracteres_buenos, $Email);
 $UserRol = str_replace($caracteres_malos, $caracteres_buenos, $Rol);
 
 $id = $_SESSION['user_id'];//Id del usuario logeado guardado en session_start()
-$Rol = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM users WHERE user_id=$id"));
+#SELECCIONAMOS LA INFORMACION DEL USUARIO LOGEADO
+$user = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM users WHERE user_id=$id"));
 
 #VERIFICAMOS SI EL USUARIO LOGEADO ES SUPER ADMIN
-if($Rol['tipo']!="Super Admin"){
-  echo "<script >M.toast({html: 'Solo un administrador puede editar un servidor.', classes: 'rounded'});</script>";
+if($user['tipo'] != "Super Admin"){
+  #Si el usuario no es 'Super Admin' mostrar msj de alerta y no hacer otra accion.
+  echo "<script >M.toast({html: 'Solo un administrador puede editar un usuario.', classes: 'rounded'});</script>";
 }else{
   #SI ES SUPER ADMIN CREAMOS LA SENTENCIA DE ACTUALIZACION
   $sql= "UPDATE users SET firstname = '$FirstName', lastname = '$LastName', user_name = '$UserName', user_email = '$UserEmail', tipo = '$UserRol' WHERE user_id = '$user_id'";
@@ -42,7 +45,8 @@ if($Rol['tipo']!="Super Admin"){
     </script>
     <?php
   }else{
-   echo '<script>M.toast({html:"Ha ocurrido un error.", classes: "rounded"})</script>';
+    #Si no se ejecuta actualizacion mostrar msj de error
+    echo '<script>M.toast({html:"Ha ocurrido un error.", classes: "rounded"})</script>';
   }
 }
 ?>
