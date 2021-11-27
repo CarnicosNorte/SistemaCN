@@ -10,9 +10,11 @@
 	</style>
 	<title>Carnicos Norte | Editar Usuario</title>
 	<?php
+	#INCLUIMOS EL ARCHIVO QUE TIENE LA BARRA DE NAVEGACION ASI COMO TODOS LOS ARCHIVOS DE DISEÑOS INCLUIDOS
 	include('Nav.php')
 	?>
 	<script>
+		//FUNCION QUE ENVIA LOS DATOS (POST) PARA CAMBIAR LA CONTRASEÑA (se activa en el modal)
 		function update_password(id){
 		  var textoClave = $("input#clave").val();
 		  var textoContra = $("input#password").val();
@@ -34,11 +36,13 @@
 	         });
 	      }
 		}
+		//FUNCION QUE CHECA SI EL email ES VALIDO (Se activa en la funcion update_usuario)
 		function validar_email(email) {
       	  var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
       	  return regex.test(email) ? true : false;
     	};
-	    function update_usuario(id) {
+    	//FUNCION QUE ENVIA LOS DATOS (POST) PARA EDITAR LA INFORMACION DEL USUARIO (Se activa con el boton Guardar)
+	    function update_usuario(id) { 
 	      var textoNombre = $("input#nombre").val();
 	      var textoApellidos = $("input#apellidos").val();
 	      var textoEmail = $("input#email").val();
@@ -73,8 +77,11 @@
 	</script>
 </head>
 <?php
+#INCLUIMOS EL ARCHIVO QUE CONTIENE LA INFORMACION Y CONEXION A LA BASE DE DATOS
 include('../php/conexion.php');
+#Verificar si se recibe la variable user_id con el metodo POST de la lista usuarios.php
 if (isset($_POST['user_id']) == false) {
+	#Si es igual a false mostramos msj de advertencia y redirecionamos a la lista de usuarios.php
 	?>
 	<script>
 		function atras(){
@@ -85,7 +92,9 @@ if (isset($_POST['user_id']) == false) {
 	</script>
 	<?php
 }else{
+#Si es True recibimos la variable user_id y mostramos el contenido de body
 $user_id = $_POST['user_id'];
+#Seleccionamos la informacion del usuario
 $usuario = mysqli_fetch_array(mysqli_query($conn, "SELECT * FROM users WHERE user_id = $user_id"));
 ?>
 <body>
